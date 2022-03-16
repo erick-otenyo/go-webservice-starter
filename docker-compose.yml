@@ -1,0 +1,12 @@
+version: '3.0'
+
+services:
+  go_webservice_starter:
+    image: localhost:5000/go_webservice_starter
+    container_name: go_webservice_starter
+    build: .
+    restart: ${RESTART_POLICY}
+    volumes:
+      - ./config:/config
+    ports:
+      - ${PORT}:9000
